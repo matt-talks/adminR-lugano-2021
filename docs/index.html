@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>index.utf8</title>
+    <meta charset="utf-8" />
+    <script src="libs/header-attrs-2.5/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/robot-fonts.css" rel="stylesheet" />
+    <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+    <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+    <link rel="stylesheet" href="more.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+
+---
+
+
+class: center, middle
+
+
+Hi, I'm Matt. (@whatsgoodio)
+
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+
+---
+
+
+
+class: center, middle
+
+
+## {kofdata}
+
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+
+---
+
+
+class: center, middle
+
+
+## {kofdata} = 
+
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+
+---
+
+
+
+class: center, middle
+
+
+## {kofdata} = KOF
+
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+
+---
+
+
+class: center, middle
+
+
+## {kofdata} = KOF + Data
+
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+
+---
+
+
+
+
+KOF Profile opendata.swiss
+
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+
+---
+
+
+class: center, middle
+
+![](index_files/figure-html/unnamed-chunk-1-1.png)&lt;!-- --&gt;
+
+&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+
+
+---
+
+class: center, middle
+
+No Excel
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+
+---
+
+## Basics: Read Time Series into Your R Session
+
+
+```r
+library(kofdata)
+tsl &lt;- `get_time_series("ch.kof.barometer")`
+length(tsl)
+str(tsl)
+```
+
+
+```
+## [1] 1
+```
+
+```
+## List of 1
+##  $ ch.kof.barometer: Time-Series [1:368] from 1991 to 2022: 78.3 69.3 69.5 78 77.9 ...
+```
+
+&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+
+
+---
+
+## Basics: Read *Multiple* Time Series into Your R Session
+
+
+```r
+labor &lt;- get_time_series(
+  c(
+    "ch.kof.ie.retro.ch_total.ind.d11",
+    "ch.kof.ie.retro.ch_total.ass.d11",
+    "ch.kof.ie.retro.ch_total.exp.d11"
+    )
+  )
+
+str(labor)
+```
+
+```
+## List of 3
+##  $ ch.kof.ie.retro.ch_total.ind.d11: Time-Series [1:117] from 1992 to 2022: -19.4 -26.4 -22.2 -20.4 -17.8 ...
+##  $ ch.kof.ie.retro.ch_total.ass.d11: Time-Series [1:117] from 1992 to 2022: -25.5 -33.5 -30.5 -30.1 -28.8 ...
+##  $ ch.kof.ie.retro.ch_total.exp.d11: Time-Series [1:117] from 1992 to 2022: -13.19 -19.31 -13.96 -10.56 -6.86 ...
+```
+
+&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+
+---
+
+## Read Meta Information    
+
+
+```r
+md &lt;- get_metadata(
+  "ch.kof.inu.ng08.fx.q_ql_ass_bs.balance",
+  "it"
+  )
+names(md$ch.kof.inu.ng08.fx.q_ql_ass_bs.balance)
+```
+
+```
+##  [1] "sa"              "item"            "noga"            "region"         
+##  [5] "sector"          "source"          "dataset"         "variable"       
+##  [9] "variable_type"   "variable_period"
+```
+
+```r
+md$ch.kof.inu.ng08.fx.q_ql_ass_bs.balance$variable
+```
+
+```
+## [1] "situazione degli affari, sentenza"
+```
+
+```r
+md$ch.kof.inu.ng08.fx.q_ql_ass_bs.balance$region
+```
+
+```
+## [1] "Svizzera totale"
+```
+
+
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+
+---
+
+
+## Collections (Formerly known as sets)
+
+
+```r
+sets &lt;- list_available_sets()
+head(sets)
+```
+
+```
+##                                        set_name
+## baro_vintages_monthly     baro_vintages_monthly
+## bs_indicator                       bs_indicator
+## ch.kof.trsm.fcst.summer ch.kof.trsm.fcst.summer
+## ch.kof.trsm.fcst.winter ch.kof.trsm.fcst.winter
+## ch.kof.trsm.fcst.year     ch.kof.trsm.fcst.year
+## ds_consensus_qtr               ds_consensus_qtr
+##                                                     set_description is_public
+## baro_vintages_monthly                        KOF Barometer vintages      TRUE
+## bs_indicator            KOF Geschäftslage Indikator und Subbranchen      TRUE
+## ch.kof.trsm.fcst.summer          KOF Tourism Forecast Summer Season      TRUE
+## ch.kof.trsm.fcst.winter          KOF Tourism Forecast Winter Season      TRUE
+## ch.kof.trsm.fcst.year                     KOF Tourism Forecast Year      TRUE
+## ds_consensus_qtr                             KOF Consensus Forecast      TRUE
+```
+
+```r
+list_keys_in_set("ogd_ch.kof.esi")
+```
+
+```
+## [1] "ch.kof.esi.index"       "ch.kof.esi.index.v2018"
+```
+
+
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+
+---
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"highlightSpans": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
