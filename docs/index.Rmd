@@ -23,6 +23,7 @@ output:
 
 class: center, middle
 
+<img src="hi-matt.png">
 
 Hi, I'm Matt. (@whatsgoodio)
 
@@ -82,10 +83,10 @@ class: center, middle
 
 ---
 
+class: center, middle
 
 
-
-KOF Profile opendata.swiss
+<img src="kof-profile.png" height=600>
 
 
 
@@ -102,7 +103,7 @@ library(kofdata)
 library(tstools)
 
 tsplot(get_time_series("ch.kof.barometer"),
-       plot_title = "Example for a Time Series",
+       plot_title = "Example of a Time Series",
        plot_subtitle = "KOF Economic Barometer")
 
 
@@ -115,7 +116,7 @@ tsplot(get_time_series("ch.kof.barometer"),
 
 class: center, middle
 
-No Excel
+<img src="excel4.jpg">
 
 
 <div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
@@ -196,6 +197,22 @@ md$ch.kof.inu.ng08.fx.q_ql_ass_bs.balance$region
 ```{r}
 sets <- list_available_sets()
 head(sets)
+
+```
+
+
+
+
+<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
+
+---
+
+
+## Collections (Formerly known as sets)
+
+```{r}
+sets <- list_available_sets()
+head(sets)
 list_keys_in_set("ogd_ch.kof.esi")
 ```
 
@@ -205,4 +222,105 @@ list_keys_in_set("ogd_ch.kof.esi")
 <div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
 
 ---
+
+
+class: center, middle
+
+## DB 
+
+
+<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
+
+
+---
+
+
+class: center, middle
+
+## DB + Express.io 
+
+
+<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
+
+
+---
+
+
+class: center, middle
+
+## DB + Express.io + Webserver  ->
+
+## https://...
+
+
+<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
+
+
+
+---
+
+
+class: center, middle
+
+## DB + Express.io + Webserver  ->
+
+## https://...
+
+
+<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
+
+
+
+---
+
+
+class: center, middle
+
+
+<img src="weebey.gif" width=400>
+
+
+
+<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a> gif found on Giphy.</div></span></div>
+
+---
+
+class: center, middle
+
+
+## 1. use {kofdata}!
+
+
+
+
+
+---
+
+class: center, middle
+
+
+## 1. use {kofdata}!
+
+## 2. if you are a data provider, consider an API approach
+
+
+
+---
+
+class: center, middle
+
+## Dr. Matthias Bannert, KOF Swiss Economic Institute
+
+## @whatsgoodio
+
+## bannert@kof.ethz.ch
+
+
+
+
+
+
+
+
+
 

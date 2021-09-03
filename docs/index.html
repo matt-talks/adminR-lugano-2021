@@ -23,6 +23,7 @@
 
 class: center, middle
 
+&lt;img src="hi-matt.png"&gt;
 
 Hi, I'm Matt. (@whatsgoodio)
 
@@ -82,10 +83,10 @@ class: center, middle
 
 ---
 
+class: center, middle
 
 
-
-KOF Profile opendata.swiss
+&lt;img src="kof-profile.png" height=600&gt;
 
 
 
@@ -105,7 +106,7 @@ class: center, middle
 
 class: center, middle
 
-No Excel
+&lt;img src="excel4.jpg"&gt;
 
 
 &lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
@@ -229,6 +230,39 @@ head(sets)
 ## ds_consensus_qtr                             KOF Consensus Forecast      TRUE
 ```
 
+
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+
+---
+
+
+## Collections (Formerly known as sets)
+
+
+```r
+sets &lt;- list_available_sets()
+head(sets)
+```
+
+```
+##                                        set_name
+## baro_vintages_monthly     baro_vintages_monthly
+## bs_indicator                       bs_indicator
+## ch.kof.trsm.fcst.summer ch.kof.trsm.fcst.summer
+## ch.kof.trsm.fcst.winter ch.kof.trsm.fcst.winter
+## ch.kof.trsm.fcst.year     ch.kof.trsm.fcst.year
+## ds_consensus_qtr               ds_consensus_qtr
+##                                                     set_description is_public
+## baro_vintages_monthly                        KOF Barometer vintages      TRUE
+## bs_indicator            KOF Geschäftslage Indikator und Subbranchen      TRUE
+## ch.kof.trsm.fcst.summer          KOF Tourism Forecast Summer Season      TRUE
+## ch.kof.trsm.fcst.winter          KOF Tourism Forecast Winter Season      TRUE
+## ch.kof.trsm.fcst.year                     KOF Tourism Forecast Year      TRUE
+## ds_consensus_qtr                             KOF Consensus Forecast      TRUE
+```
+
 ```r
 list_keys_in_set("ogd_ch.kof.esi")
 ```
@@ -243,6 +277,107 @@ list_keys_in_set("ogd_ch.kof.esi")
 &lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
 
 ---
+
+
+class: center, middle
+
+## DB 
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+
+
+---
+
+
+class: center, middle
+
+## DB + Express.io 
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+
+
+---
+
+
+class: center, middle
+
+## DB + Express.io + Webserver  -&gt;
+
+## https://...
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+
+
+
+---
+
+
+class: center, middle
+
+## DB + Express.io + Webserver  -&gt;
+
+## https://...
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+
+
+
+---
+
+
+class: center, middle
+
+
+&lt;img src="weebey.gif" width=400&gt;
+
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt; gif found on Giphy.&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+
+---
+
+class: center, middle
+
+
+## 1. use {kofdata}!
+
+
+
+
+
+---
+
+class: center, middle
+
+
+## 1. use {kofdata}!
+
+## 2. if you are a data provider, consider an API approach
+
+
+
+---
+
+class: center, middle
+
+## Dr. Matthias Bannert, KOF Swiss Economic Institute
+
+## @whatsgoodio
+
+## bannert@kof.ethz.ch
+
+
+
+
+
+
+
+
+
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
