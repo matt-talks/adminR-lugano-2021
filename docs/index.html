@@ -1,290 +1,86 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>index.utf8</title>
+    <title>swissdata v1.0</title>
     <meta charset="utf-8" />
-    <script src="libs/header-attrs-2.5/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/robot-fonts.css" rel="stylesheet" />
-    <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-    <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
     <link rel="stylesheet" href="more.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
+class: center, middle, inverse, title-slide
 
-
-&lt;/br&gt;
-&lt;/br&gt;
-&lt;/br&gt;
-&lt;/br&gt;
+# swissdata v1.0
+## Learnings from the Past &amp; Roadmap for the Future
 
 ---
 
 
 class: center, middle
 
-&lt;img src="hi-matt.png"&gt;
+## Motivation
 
-Hi, I'm Matt. (@whatsgoodio)
-
-
-
-&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
-
----
-
-
-
-class: center, middle
-
-
-## {kofdata}
-
+### Why Revamp swissdata ? 
 
 
 &lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
 
 ---
 
-
-class: center, middle
-
-
-## {kofdata} = 
+## 1. New FSO .csv + ODS files
 
 
+&lt;img src="fsocsv.png" width="800" /&gt;
 
-&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+- easier to read maintain
+- metadata kept separate by FSO already
+- heterogenerous across datasets, but a step towards swissdata format
+
 
 ---
 
 
-
-class: center, middle
-
-
-## {kofdata} = KOF
+## 2. First Level Support Has Been too Hard to Split
 
 
+&lt;img src="contributors.png" width="400" /&gt;
 
-&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
 
 ---
 
-
-class: center, middle
-
-
-## {kofdata} = KOF + Data
+## 3. Timing 
 
 
+Plenty of Funding Opportunities and Partners Available: 
 
-&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
-
----
-
-class: center, middle
-
-
-&lt;img src="kof-profile.png" height=600&gt;
-
-
-
-&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
-
----
-
-
-class: center, middle
-
-![](index_files/figure-html/unnamed-chunk-1-1.png)&lt;!-- --&gt;
-
-&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+- https://github.com/statistikZH/statbot (collab with FSO, DataShop Kanton ZH, ZHAW)
+- Open Science and Open Research Data calls from ETH, Swiss Data Science Center, Swiss Universities 
+- FSO very cooperative, in particular w.r.t. to macroeconomic data
 
 
 ---
 
 class: center, middle
 
-&lt;img src="excel4.jpg"&gt;
-
-
-&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
-
----
-
-## Basics: Read Time Series into Your R Session
-
-
-```r
-library(kofdata)
-tsl &lt;- `get_time_series("ch.kof.barometer")`
-length(tsl)
-str(tsl)
-```
-
-
-```
-## [1] 1
-```
-
-```
-## List of 1
-##  $ ch.kof.barometer: Time-Series [1:368] from 1991 to 2022: 78.3 69.3 69.5 78 77.9 ...
-```
-
-&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+## Goals 
 
 
 ---
 
-## Basics: Read *Multiple* Time Series into Your R Session
 
+## 1. Easy Debugging Interactive Use
 
-```r
-labor &lt;- get_time_series(
-  c(
-    "ch.kof.ie.retro.ch_total.ind.d11",
-    "ch.kof.ie.retro.ch_total.ass.d11",
-    "ch.kof.ie.retro.ch_total.exp.d11"
-    )
-  )
-
-str(labor)
-```
-
-```
-## List of 3
-##  $ ch.kof.ie.retro.ch_total.ind.d11: Time-Series [1:117] from 1992 to 2022: -19.4 -26.4 -22.2 -20.4 -17.8 ...
-##  $ ch.kof.ie.retro.ch_total.ass.d11: Time-Series [1:117] from 1992 to 2022: -25.5 -33.5 -30.5 -30.1 -28.8 ...
-##  $ ch.kof.ie.retro.ch_total.exp.d11: Time-Series [1:117] from 1992 to 2022: -13.19 -19.31 -13.96 -10.56 -6.86 ...
-```
-
-&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
 
 ---
 
-## Read Meta Information    
+## 2. Facilitate Automation / Production Use
 
-
-```r
-md &lt;- get_metadata(
-  "ch.kof.inu.ng08.fx.q_ql_ass_bs.balance",
-  "it"
-  )
-names(md$ch.kof.inu.ng08.fx.q_ql_ass_bs.balance)
-```
-
-```
-##  [1] "sa"              "item"            "noga"            "region"         
-##  [5] "sector"          "source"          "dataset"         "variable"       
-##  [9] "variable_type"   "variable_period"
-```
-
-```r
-md$ch.kof.inu.ng08.fx.q_ql_ass_bs.balance$variable
-```
-
-```
-## [1] "situazione degli affari, sentenza"
-```
-
-```r
-md$ch.kof.inu.ng08.fx.q_ql_ass_bs.balance$region
-```
-
-```
-## [1] "Svizzera totale"
-```
-
-
-
-
-&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
 
 ---
 
 
-## Collections (Formerly known as sets)
-
-
-```r
-sets &lt;- list_available_sets()
-head(sets)
-```
-
-```
-##                                        set_name
-## baro_vintages_monthly     baro_vintages_monthly
-## bs_indicator                       bs_indicator
-## ch.kof.trsm.fcst.summer ch.kof.trsm.fcst.summer
-## ch.kof.trsm.fcst.winter ch.kof.trsm.fcst.winter
-## ch.kof.trsm.fcst.year     ch.kof.trsm.fcst.year
-## ds_consensus_qtr               ds_consensus_qtr
-##                                                     set_description is_public
-## baro_vintages_monthly                        KOF Barometer vintages      TRUE
-## bs_indicator            KOF Geschäftslage Indikator und Subbranchen      TRUE
-## ch.kof.trsm.fcst.summer          KOF Tourism Forecast Summer Season      TRUE
-## ch.kof.trsm.fcst.winter          KOF Tourism Forecast Winter Season      TRUE
-## ch.kof.trsm.fcst.year                     KOF Tourism Forecast Year      TRUE
-## ds_consensus_qtr                             KOF Consensus Forecast      TRUE
-```
-
-
-
-
-&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
-
----
-
-
-## Collections (Formerly known as sets)
-
-
-```r
-sets &lt;- list_available_sets()
-head(sets)
-```
-
-```
-##                                        set_name
-## baro_vintages_monthly     baro_vintages_monthly
-## bs_indicator                       bs_indicator
-## ch.kof.trsm.fcst.summer ch.kof.trsm.fcst.summer
-## ch.kof.trsm.fcst.winter ch.kof.trsm.fcst.winter
-## ch.kof.trsm.fcst.year     ch.kof.trsm.fcst.year
-## ds_consensus_qtr               ds_consensus_qtr
-##                                                     set_description is_public
-## baro_vintages_monthly                        KOF Barometer vintages      TRUE
-## bs_indicator            KOF Geschäftslage Indikator und Subbranchen      TRUE
-## ch.kof.trsm.fcst.summer          KOF Tourism Forecast Summer Season      TRUE
-## ch.kof.trsm.fcst.winter          KOF Tourism Forecast Winter Season      TRUE
-## ch.kof.trsm.fcst.year                     KOF Tourism Forecast Year      TRUE
-## ds_consensus_qtr                             KOF Consensus Forecast      TRUE
-```
-
-```r
-list_keys_in_set("ogd_ch.kof.esi")
-```
-
-```
-## [1] "ch.kof.esi.index"       "ch.kof.esi.index.v2018"
-```
-
-
-
-
-&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
-
----
-
-
-class: center, middle
-
-## DB 
-
-
-&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+## 3. Improve Expandability - Build Community 
 
 
 ---
@@ -292,85 +88,51 @@ class: center, middle
 
 class: center, middle
 
-## DB + Express.io 
-
-
-&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+## Implementation Strategy
 
 
 ---
 
+## 1. Modularize
 
-class: center, middle
+- swissdata.core (engine, skeleton/boilerplate, read, write, keep history in folder etc.)
+- swissdata.snb, swissdata.fso (pacmans)
 
-## DB + Express.io + Webserver  -&gt;
-
-## https://...
-
-
-&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
-
-
+(separation of concern, integration of data already in sd format (SECO) and data that needs to be converted)
 
 ---
 
+## 2. 5-Star Documentation 
 
-class: center, middle
-
-## DB + Express.io + Webserver  -&gt;
-
-## https://...
-
-
-&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
-
-
+- Project Documentation (swissdata, paired file approach)
+- pkgdown for swissdata.core, swissdata.snb etc. 
+- common documentation, inheritParams etc. 
 
 ---
 
+## 3. Improved Boilerplates
 
-class: center, middle
-
-
-&lt;img src="weebey.gif" width=400&gt;
-
-
-
-&lt;div class="my-footer"&gt;&lt;span&gt;&lt;div class="footer-text" align="right"&gt;These slides and video presentation by Dr. Matthias Bannert are licensed under &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"&gt;CC BY-NC-SA 4.0&lt;/a&gt; gif found on Giphy.&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;
+- function skeletons
+- more transparent dispatch
+- validate functions are key
+- guidance in case of dataset issues, help track 'em down
 
 ---
 
 class: center, middle
 
-
-## 1. use {kofdata}!
-
-
-
+## Roadmap
 
 
 ---
 
-class: center, middle
-
-
-## 1. use {kofdata}!
-
-## 2. if you are a data provider, consider an API approach
-
+## Milestones
 
 
 ---
 
-class: center, middle
 
-## Dr. Matthias Bannert, KOF Swiss Economic Institute
-
-## @whatsgoodio
-
-## bannert@kof.ethz.ch
-
-
+## Gantt-Chart
 
 
 

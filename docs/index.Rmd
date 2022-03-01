@@ -1,5 +1,6 @@
 ---
-
+title: swissdata v1.0
+subtitle: "Learnings from the Past & Roadmap for the Future"
 output:
   xaringan::moon_reader:
     css: ["robot-fonts","more.css"]
@@ -13,223 +14,74 @@ output:
       beforeInit: "https://platform.twitter.com/widgets.js"
 ---
 
-</br>
-</br>
-</br>
-</br>
-
----
-
-
 class: center, middle
 
-<img src="hi-matt.png">
+## Motivation
 
-Hi, I'm Matt. (@whatsgoodio)
-
+### Why Revamp swissdata ? 
 
 
 <div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
 
 ---
 
+## 1. New FSO .csv + ODS files
 
 
-class: center, middle
-
-
-## {kofdata}
-
-
-
-<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
-
----
-
-
-class: center, middle
-
-
-## {kofdata} = 
-
-
-
-<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
-
----
-
-
-
-class: center, middle
-
-
-## {kofdata} = KOF
-
-
-
-<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
-
----
-
-
-class: center, middle
-
-
-## {kofdata} = KOF + Data
-
-
-
-<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
-
----
-
-class: center, middle
-
-
-<img src="kof-profile.png" height=600>
-
-
-
-<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
-
----
-
-
-class: center, middle
-
-```{r, echo=FALSE,warning=FALSE,message=FALSE,fig.width=14}
-
-library(kofdata)
-library(tstools)
-
-tsplot(get_time_series("ch.kof.barometer"),
-       plot_title = "Example of a Time Series",
-       plot_subtitle = "KOF Economic Barometer")
-
-
+```{r, out.width=800,echo=FALSE}
+knitr::include_graphics("fsocsv.png")
 ```
 
-<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
+- easier to read maintain
+- metadata kept separate by FSO already
+- heterogenerous across datasets, but a step towards swissdata format
 
 
 ---
 
-class: center, middle
 
-<img src="excel4.jpg">
-
-
-<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
-
----
-
-## Basics: Read Time Series into Your R Session
-
-```{r,eval=FALSE}
-library(kofdata)
-tsl <- `get_time_series("ch.kof.barometer")`
-length(tsl)
-str(tsl)
+## 2. First Level Support Has Been too Hard to Split
 
 
-```
-
-```{r,echo=FALSE}
-library(kofdata)
-tsl <- get_time_series("ch.kof.barometer")
-length(tsl)
-str(tsl)
-
-
-```
-
-<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
-
-
----
-
-## Basics: Read *Multiple* Time Series into Your R Session
-
-```{r}
-labor <- get_time_series(
-  c(
-    "ch.kof.ie.retro.ch_total.ind.d11",
-    "ch.kof.ie.retro.ch_total.ass.d11",
-    "ch.kof.ie.retro.ch_total.exp.d11"
-    )
-  )
-
-str(labor)
-
-
-
-
-```
-
-<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
-
----
-
-## Read Meta Information    
-
-```{r}
-md <- get_metadata(
-  "ch.kof.inu.ng08.fx.q_ql_ass_bs.balance",
-  "it"
-  )
-names(md$ch.kof.inu.ng08.fx.q_ql_ass_bs.balance)
-md$ch.kof.inu.ng08.fx.q_ql_ass_bs.balance$variable
-md$ch.kof.inu.ng08.fx.q_ql_ass_bs.balance$region
-
-
+```{r, out.width=400,echo=FALSE}
+knitr::include_graphics("contributors.png")
 ```
 
 
-
-
-<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
-
 ---
 
-
-## Collections (Formerly known as sets)
-
-```{r}
-sets <- list_available_sets()
-head(sets)
-
-```
+## 3. Timing 
 
 
+Plenty of Funding Opportunities and Partners Available: 
 
+- https://github.com/statistikZH/statbot (collab with FSO, DataShop Kanton ZH, ZHAW)
+- Open Science and Open Research Data calls from ETH, Swiss Data Science Center, Swiss Universities 
+- FSO very cooperative, in particular w.r.t. to macroeconomic data
 
-<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
 
 ---
-
-
-## Collections (Formerly known as sets)
-
-```{r}
-sets <- list_available_sets()
-head(sets)
-list_keys_in_set("ogd_ch.kof.esi")
-```
-
-
-
-
-<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
-
----
-
 
 class: center, middle
 
-## DB 
+## Goals 
 
 
-<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
+---
+
+
+## 1. Easy Debugging Interactive Use
+
+
+---
+
+## 2. Facilitate Automation / Production Use
+
+
+---
+
+
+## 3. Improve Expandability - Build Community 
 
 
 ---
@@ -237,85 +89,51 @@ class: center, middle
 
 class: center, middle
 
-## DB + Express.io 
-
-
-<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
+## Implementation Strategy
 
 
 ---
 
+## 1. Modularize
 
-class: center, middle
+- swissdata.core (engine, skeleton/boilerplate, read, write, keep history in folder etc.)
+- swissdata.snb, swissdata.fso (pacmans)
 
-## DB + Express.io + Webserver  ->
-
-## https://...
-
-
-<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
-
-
+(separation of concern, integration of data already in sd format (SECO) and data that needs to be converted)
 
 ---
 
+## 2. 5-Star Documentation 
 
-class: center, middle
-
-## DB + Express.io + Webserver  ->
-
-## https://...
-
-
-<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a></div></span></div>
-
-
+- Project Documentation (swissdata, paired file approach)
+- pkgdown for swissdata.core, swissdata.snb etc. 
+- common documentation, inheritParams etc. 
 
 ---
 
+## 3. Improved Boilerplates
 
-class: center, middle
-
-
-<img src="weebey.gif" width=400>
-
-
-
-<div class="my-footer"><span><div class="footer-text" align="right">These slides and video presentation by Dr. Matthias Bannert are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1">CC BY-NC-SA 4.0</a> gif found on Giphy.</div></span></div>
+- function skeletons
+- more transparent dispatch
+- validate functions are key
+- guidance in case of dataset issues, help track 'em down
 
 ---
 
 class: center, middle
 
-
-## 1. use {kofdata}!
-
-
-
+## Roadmap
 
 
 ---
 
-class: center, middle
-
-
-## 1. use {kofdata}!
-
-## 2. if you are a data provider, consider an API approach
-
+## Milestones
 
 
 ---
 
-class: center, middle
 
-## Dr. Matthias Bannert, KOF Swiss Economic Institute
-
-## @whatsgoodio
-
-## bannert@kof.ethz.ch
-
-
+## Gantt-Chart
 
 
 
